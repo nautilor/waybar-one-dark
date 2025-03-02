@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+hasfullscreen=`hyprctl -j activeworkspace | jq -r '.hasfullscreen'`
+[ "$hasfullscreen" = "true" ] && echo " " || echo "󰙀 "

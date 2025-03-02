@@ -21,6 +21,7 @@ This is my personal theme for [Waybar](https://github.com/Alexays/Waybar).
 ### Left
 
 - **Rofi launcher**: Click to open Rofi with the commmand `rofi -show drun -theme launcher`
+- **Fullscreen**: Indicate if the current workspace is in fullscreen or tiling mode (Hyprland).
 
 ### Center
 
@@ -28,14 +29,14 @@ This is my personal theme for [Waybar](https://github.com/Alexays/Waybar).
 
 ### Right
 
-- **Updates**: Number of available updates.
+- **Updates**: Number of available updates using `checkupdates` (Arch).
 - **Spotify**: Show the current song playing on Spotify.
 - **Bluetooth**: Show the current Bluetooth status, click to open Blueman Manager.
 - **Toggle laptop keyboard**: Click to toggle the laptop keyboard on and off.
 - **Inhibit idle**: Click to toggle the idle inhibitor on and off.
 - **Battery**: Show the battery percentage.
 - **Clock**: Show the current time, hover it to show the calendar and click to show the date as well.
-- _Tray_: Show the tray icons.
+- **Tray**: Show the tray icons.
 
 ## License
 

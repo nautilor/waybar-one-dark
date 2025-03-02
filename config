@@ -1,10 +1,14 @@
 {
     "layer": "top",
 		"position": "bottom",
+		"margin": 5,
     "height": 40,
 		"output": "eDP-1",
+		"reload_style_on_change": true,
     "modules-left": [
         "custom/menu",
+				"custom/separator",
+				"custom/fullscreen",
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -19,6 +23,15 @@
         "clock",
         "tray"
     ],
+		"custom/separator": {
+			"format": "|",
+		},
+		"custom/fullscreen": {
+			"exec": "./bin/fullscreen",
+			"format": "{}",
+			"tooltip": false,
+			"restart-interval": 0
+		},
     "custom/menu": {
         "format": " ",
         "on-click": "rofi -show drun -theme launcher",

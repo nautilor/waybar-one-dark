@@ -5,14 +5,26 @@
   font-weight: bold;
   font-size: 12px;
 }
+
+window#waybar {
+  border-radius: 8px;
+}
+
 window#waybar > box {
   background-color: @background;
+  border-radius: 8px;
   padding-left: 20px;
   padding-right: 10px;
 }
 
 window#waybar.hidden {
   opacity: 0.2;
+}
+
+#custom-separator {
+  color: @alt500;
+  padding-left: 3px;
+  padding-right: 10px;
 }
 
 /* Application Menu */
@@ -29,13 +41,18 @@ window#waybar.hidden {
   color: @green700;
 }
 
+#custom-fullscreen {
+  font-size: 15px;
+  color: @yellow;
+}
+
 #workspaces {
 }
 
 #workspaces button {
   color: @alt;
   border: 0px solid @text;
-  background-color: @background;
+  background-color: transparent;
 }
 
 #workspaces button:hover {
@@ -44,14 +61,17 @@ window#waybar.hidden {
 
 #workspaces button.visible {
   color: @blue;
+  background-color: transparent;
 }
 
 #workspaces button.active {
   color: @yellow;
+  background-color: transparent;
 }
 
 #workspaces button.hidden {
   color: @red;
+  background-color: transparent;
 }
 
 #custom-updates,
