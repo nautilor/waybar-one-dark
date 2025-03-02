@@ -15,7 +15,6 @@
     ],
     "modules-right": [
 				"custom/updates",
-				"custom/spotify",
         "bluetooth",
         "custom/keyboard",
         "idle_inhibitor",
