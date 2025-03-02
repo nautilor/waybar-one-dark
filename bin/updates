@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Check for updates and display the number of available updates
+updates=$(checkupdates | wc -l)
+echo "   $updates"

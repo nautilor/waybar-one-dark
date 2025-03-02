@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+# I use this script to toggle the laptop keyboard on and off
+
+# Define the Hyprland variable for the keyboard device
+HYPRLAND_VARIABLE="device[at-translated-set-2-keyboard]:enabled"
+# Define the status file location
+STATUS_FILE="$XDG_RUNTIME_DIR/keyboard.status"
+
+# cat the status file
+read_status() {
+    cat "$STATUS_FILE"
+}
+
+# update the status file
+update_status() {
+    echo "$1" > "$STATUS_FILE"
+}
+
+# disable or enable the keyboard and send a signal to waybar to update the icon
+set_keyboard() {
+    hyprctl -r keyword "$HYPRLAND_VARIABLE" $1
+    pkill -SIGRTMIN+8 waybar
+}
+
+# return the status icon for waybar
+get_status() {
+    CURRENT_STATUS=`read_status`
+    if [ "$CURRENT_STATUS" = "1" ]; then
+        echo "󰌌 "  # Keyboard enabled icon
+    else
+        echo "󰌐 "  # Keyboard disabled icon
+    fi
+}
+
+# initialize the status file if it doesn't exist
+if [ ! -f "$XDG_RUNTIME_DIR/keyboard.status" ]; then
+    update_status 1
+fi
+
+# return an icon for waybar
+if [[ -n "$1" && "$1" == "status" ]]; then
+    get_status
+    exit 0
+fi
+
+# read the current status
+CURRENT_STATUS=`read_status`
+
+# toggle the keyboard
+if [ "$CURRENT_STATUS" -eq 1 ]; then
+    set_keyboard false
+else
+    set_keyboard true
+fi
+
+# update the status file
+if [ "$CURRENT_STATUS" -eq 0 ]; then
+    update_status 1
+else
+    update_status 0
+fi
