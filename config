@@ -27,7 +27,7 @@
 			"format": "|",
 		},
 		"custom/fullscreen": {
-			"exec": "./bin/fullscreen",
+			"exec": "$HOME/.config/waybar/bin/fullscreen",
 			"format": "{}",
 			"tooltip": false,
 			"restart-interval": 0
@@ -38,13 +38,13 @@
         "tooltip": false
     },
 		"custom/updates": {
-				"exec": "./bin/updates",
+				"exec": "$HOME/.config/waybar/bin/updates",
 				"format": "{}",
 				"tooltip": false,
 				"interval": 15,
 		},
 		"custom/spotify": {
-				"exec": "./bin/mediaplayer",
+				"exec": "$HOME/.config/waybar/bin/mediaplayer",
 				"format": "{}",
 				"return-type": "json",
 				"on-click": "spotify",
